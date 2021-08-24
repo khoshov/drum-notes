@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+
+
+{% for beat in snippet.beats %}
+    {% include 'snippets/beat.html' %}
+{% endfor %}

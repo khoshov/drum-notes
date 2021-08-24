@@ -1,0 +1,60 @@
+{% load static %}
+
+
+{% for beat in beats %}
+    <div class="card" style="display: inline-block">
+        <div class="card-body">
+            <table class="table table-borderless">
+                <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">1</th>
+                    <th scope="col">&</th>
+                    <th scope="col">2</th>
+                    <th scope="col">&</th>
+                    <th scope="col">3</th>
+                    <th scope="col">&</th>
+                    <th scope="col">4</th>
+                    <th scope="col">&</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row"><img src="{% static 'snippets/img/hihat.png' %}" alt="" class="icon"></th>
+                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><img src="{% static 'snippets/img/snare.png' %}" alt="" class="icon"></th>
+                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><img src="{% static 'snippets/img/kick.png' %}" alt="" class="icon"></th>
+                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+{% endfor %}
