@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 
+{% block content %}
+<h1>{{ snippet.name }}</h1>
 
-{% for beat in snippet.beats %}
-    {% include 'snippets/beat.html' %}
-{% endfor %}
+{% include 'snippets/beat.html' %}
+
+{% endblock content %}
