@@ -1,8 +1,9 @@
 {% load static %}
+{% load getattribute %}
 
 
 {% for beat in snippet.beats.all %}
-    <div class="card" style="display: inline-block">
+    <div class="card mt-5" style="display: inline-block">
         <div class="card-body">
             <table class="table table-borderless">
                 <thead>
@@ -21,40 +22,60 @@
                 <tbody>
                 <tr>
                     <th scope="row"><img src="{% static 'snippets/img/hihat.png' %}" alt="" class="icon"></th>
-                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                    {% for bar in bars %}
+                        <td>
+                            <input class="form-check-input"
+                                   type="checkbox"
+                                   value=""
+                                   data-snippet-id="{{ snippet.id }}"
+                                   data-beat-id="{{ beat.id }}"
+                                   data-pattern-id="{{ beat.hihat.pattern.id }}"
+                                   data-bar="{{ bar }}"
+                                   data-index="{{ forloop.counter }}"
+                                   {% if beat.hihat.pattern|getattribute:bar %}checked{% endif %}>
+                        </td>
+                    {% endfor %}
                 </tr>
                 <tr>
                     <th scope="row"><img src="{% static 'snippets/img/snare.png' %}" alt="" class="icon"></th>
-                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                    {% for bar in bars %}
+                        <td>
+                            <input class="form-check-input"
+                                   type="checkbox"
+                                   value=""
+                                   data-snippet-id="{{ snippet.id }}"
+                                   data-beat-id="{{ beat.id }}"
+                                   data-pattern-id="{{ beat.snare.pattern.id }}"
+                                   data-position="{{ forloop.counter }}"
+                                   {% if beat.snare.pattern|getattribute:bar %}checked{% endif %}>
+                        </td>
+                    {% endfor %}
                 </tr>
                 <tr>
                     <th scope="row"><img src="{% static 'snippets/img/kick.png' %}" alt="" class="icon"></th>
-                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                    {% for bar in bars %}
+                        <td>
+                            <input class="form-check-input"
+                                   type="checkbox"
+                                   value=""
+                                   data-snippet-id="{{ snippet.id }}"
+                                   data-beat-id="{{ beat.id }}"
+                                   data-pattern-id="{{ beat.kick.pattern.id }}"
+                                   data-position="{{ forloop.counter }}"
+                                   {% if beat.kick.pattern|getattribute:bar %}checked{% endif %}>
+                        </td>
+                    {% endfor %}
                 </tr>
                 </tbody>
             </table>
         </div>
     </div>
-    </div>
 {% endfor %}
+
+{% block scripts %}
+    <script>
+        $(document).ready(function(){
+            alert('hui');
+        })
+    </script>
+{% endblock %}

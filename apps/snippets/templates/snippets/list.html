@@ -2,7 +2,20 @@
 
 
 {% block content %}
-    {% for snippet in snippets %}
-        <h2><a href="{{ snippet.get_absolute_url }}">{{ snippet.name }}</a></h2>
-    {% endfor %}
+    <form action="{% url 'snippets:add' %}" method="post">
+        {% csrf_token %}
+        <div class="row g-3 align-items-center">
+            <div class="col-3">
+                <input type="text" class="form-control" id="name" placeholder="name" required name="name">
+            </div>
+            <div class="col-3">
+                <button type="submit" class="btn btn-primary">add new snippet</button>
+            </div>
+        </div>
+    </form>
+    <div class="snippet-list mt-5">
+        {% for snippet in snippets %}
+            <h2><a href="{{ snippet.get_absolute_url }}">{{ snippet.name }}</a></h2>
+        {% endfor %}
+    </div>
 {% endblock content %}

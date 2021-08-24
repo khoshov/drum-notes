@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'nested_admin',
+    'rest_framework',
 
     'snippets',
 ]

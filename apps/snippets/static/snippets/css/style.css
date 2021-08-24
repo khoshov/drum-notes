@@ -1,0 +1,22 @@
+.icon {
+  width: 32px;
+}
+
+.form-check-input:checked[type=checkbox] {
+  background-image: none;
+}
+
+.form-check-input[type=checkbox] {
+    border-radius: 50%;
+}
+
+.form-check-input:checked {
+    background-color: #212529;
+    border-color: #212529;
+}
+
+.form-check-input:focus {
+    border-color: rgba(0,0,0,.25);
+    outline: 0;
+    box-shadow: none;
+}
